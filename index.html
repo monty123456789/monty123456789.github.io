@@ -1,26 +1,129 @@
+
 <!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+            background-color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+          }
 
-<html lang="en-US">
+        .red {
+            background-color: red;
+        }
 
-  <head>
-    <meta charset="utf-8">
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
 
-    <title>candlelight</title>
+        .center_Img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    <meta name="Monty" content=" corporations">
+        #myDiv {
+          color: red;
+          opacity: 0;
+        }
 
+        #imgA {
+          display: block;
+          margin-top: 20vh;
+            margin-left: auto;
+            margin-right: auto;
+          opacity: 0;
+        }
 
-    <h1>Hello Friend</h1>
-    <h2>Would you like to eat with me I can no longer drink</h2>
+        .text_c {
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          width: 80%;
+          border: 3px solid #73AD21;
+          font-size: 10vh;
+        }
 
+        .full_page {
+          height: 100vh;
+        }
 
-  </head>
+        .blue {
+          height: 100vh;
+          background-color: blue;
 
-  
+        }
 
-    <p><a href="2nd.html" target="blank"><button> click where you want to go </button></a> </p>
+        .gallery {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1vw);
+          grid-gap: 1px;
+        }
 
-  </body>
+         
+       
 
+        </style>
+    </head>
 
+    <body id = "body">
+
+      <div class = "gallery" >
+      <img class = "center" onmouseenter = "redColor(), appear();" onmouseleave = "blueColor(), disappear();" 
+      src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
+       
+      <img class = "center" onmouseenter = "redColor(), appear();" onmouseleave = "blueColor(), disappear();" 
+      src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
+      </div>
+
+      <div onmouseover = "image_disappear(), blueColor()">
+        <button onclick="image_appear(), redColor()" onmouseleave = "image_disappear(), redColor()">Try it</button>
+        </div>
+
+      <div id = "imgA">
+      <img class = "center_Img" src='imgs/lightning.jpg' img/>
+      </div>
+
+      <div id = "myDiv">
+          <p class = "text_c"> Enter</p>
+      </div>
+
+      
+       
+        
+    <script>
+      function redColor() {
+        var col = document.getElementById("body");
+        col.style.backgroundColor = "black";
+    }
+
+    function blueColor() {
+        var col = document.getElementById("body");
+        col.style.backgroundColor = "white";
+    }
+
+    function appear() {
+       document.getElementById("myDiv").style.opacity = "1";
+    }
+
+    function disappear() {
+       document.getElementById("myDiv").style.opacity = "0";
+    }
+
+    function image_appear() {
+       document.getElementById("imgA").style.opacity = "1";
+    }
+
+    function image_disappear() {
+       document.getElementById("imgA").style.opacity = "0";
+    }
+
+    
+    </script>
+
+    </body>
 </html>
