@@ -27,7 +27,12 @@
             margin-right: auto;
         }
 
-        #myDiv {
+        #myDivL {
+          color: red;
+          opacity: 0;
+        }
+
+        #myDivR {
           color: red;
           opacity: 0;
         }
@@ -75,24 +80,33 @@
     <body id = "body">
 
       <div class = "gallery" >
-      <img class = "center" onmouseenter = "redColor(), appear();" onmouseleave = "blueColor(), disappear();" 
+      <img class = "center" onmouseenter = "redColor(), appearL();" onmouseleave = "blueColor(), disappearL();" 
       src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
        
-      <img class = "center" onmouseenter = "redColor(), appear();" onmouseleave = "blueColor(), disappear();" 
+      <img class = "center" onmouseenter = "redColor(), appearR();" onmouseleave = "blueColor(), disappearR();" 
       src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
       </div>
 
       <div onmouseover = "image_disappear(), blueColor()">
-        <button onclick="image_appear(), redColor()" onmouseleave = "image_disappear(), redColor()">Try it</button>
-        </div>
+       <!-- <button onclick="image_appear(), redColor()" onmouseleave = "image_disappear(), redColor()">Try it</button> -->
+      <p id='demo' class = "text_c" style='display: none'>Contact info: </p>     
+      <button type='button' onclick="toggleText()">Try it</button>
+    </div>
+
+      
+    <a href="index.html"><button type="button">go back</button></a>
 
       <div id = "imgA">
       <img class = "center_Img" src='imgs/lightning.jpg' img/>
       </div>
 
-      <div id = "myDiv">
-          <p class = "text_c"> Enter</p>
+      <div id = "myDivL">
+          <p class = "text_c"> Hello</p>
       </div>
+
+      <div id = "myDivR">
+        <p class = "text_c"> Goodbye</p>
+    </div>
 
       
        
@@ -108,12 +122,20 @@
         col.style.backgroundColor = "white";
     }
 
-    function appear() {
-       document.getElementById("myDiv").style.opacity = "1";
+    function appearL() {
+       document.getElementById("myDivL").style.opacity = "1";
     }
 
-    function disappear() {
-       document.getElementById("myDiv").style.opacity = "0";
+    function disappearL() {
+       document.getElementById("myDivL").style.opacity = "0";
+    }
+
+    function appearR() {
+       document.getElementById("myDivR").style.opacity = "1";
+    }
+
+    function disappearR() {
+       document.getElementById("myDivR").style.opacity = "0";
     }
 
     function image_appear() {
@@ -123,6 +145,15 @@
     function image_disappear() {
        document.getElementById("imgA").style.opacity = "0";
     }
+
+    function toggleText() {
+      var text = document.getElementById("demo");
+      if (text.style.display === "none") {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+}
 
     
     </script>

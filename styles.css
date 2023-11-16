@@ -55,14 +55,13 @@ body.loaded #background {
     cursor: pointer;
     transition: opacity 0.3s; /* Add a smooth opacity transition */
     opacity: 0;
-
     color: BLACK;
-    font-size: 10em;
+    font-size: 3em;
     text-shadow: 0 0 10pX WHITE;
 }
 
 #clickable-text:hover {
-    opacity: 1;
+    opacity: 0;
 }
 
 #initial-text {
@@ -72,7 +71,7 @@ body.loaded #background {
     font-size: 10em;
     text-shadow: 0 0 10pX WHITE;
 
-    transition: opacity 1s; /* Add a smooth opacity transition */
+    transition: opacity 3s; /* Add a smooth opacity transition */
 }
 
 
