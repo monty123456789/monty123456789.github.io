@@ -71,7 +71,7 @@ body.loaded #background {
     font-size: 10em;
     text-shadow: 0 0 10pX WHITE;
 
-    transition: opacity 3s; /* Add a smooth opacity transition */
+    transition: opacity 1s; /* Add a smooth opacity transition */
 }
 
 
