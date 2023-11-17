@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vimeo Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="portfolio">
+  <div class="film" onclick="enlargeFilm('375247022')">
+    <img src="imgs/eye_1_neg.jpg" alt="Film 0">
+  </div>
+  <div class="film" onclick="enlargeFilm('842453811')">
+    <img src="imgs/eye_1.jpg" alt="Film 1">
+  </div>
+  <!-- Add other film divs similarly -->
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <span class="close" onclick="closeFilm()">&times;</span>
+    <div class="modal-content">
+      <div class="film-container" id="filmContainer">
+        <!-- Enlarged Vimeo film iframe will be loaded here -->
+      </div>
+      <div class="arrow-btn prev" onclick="changeFilm(-1)">&#10094;</div>
+      <div class="film-container" id="filmContainer">
+        <!-- Enlarged Vimeo film iframe will be loaded here -->
+      </div>
+      <div class="arrow-btn next" onclick="changeFilm(1)">&#10095;</div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

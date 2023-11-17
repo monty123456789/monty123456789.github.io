@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Portfolio</title>
+    <style>
+        /* ... (previous CSS styles) */
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            z-index: 9999;
+            padding: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-video {
+            width: 70vw;
+            height: 70vh;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Film Portfolio</h1>
+        <ul class="film-grid">
+            <!-- Films as before -->
+
+           
+                    <li class="film-item">
+                        <div class="video-container">
+                            <iframe src="https://player.vimeo.com/video/756760035?badge=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <!-- Additional film information or link can be added here -->
+                    </li>
+                    <li class="film-item">
+                        <div class="video-container">
+                            <iframe src="https://player.vimeo.com/video/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <!-- Additional film information or link can be added here -->
+                    </li>
+                    <li class="film-item">
+                        <div class="video-container">
+                            <iframe src="https://player.vimeo.com/video/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <!-- Additional film information or link can be added here -->
+                    </li>
+                    <!-- Repeat the film items to add more films -->
+
+        </ul>
+    </div>
+
+    <div class="modal" id="modal">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <div class="modal-content">
+            <iframe class="modal-video" id="modalVideo" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        const films = document.querySelectorAll('.film-item iframe');
+        const modal = document.getElementById('modal');
+        const modalVideo = document.getElementById('modalVideo');
+        const closeModal = document.getElementById('closeModal');
+
+        let currentIndex = 0;
+
+        films.forEach((film, index) => {
+            film.addEventListener('click', () => {
+                modalVideo.src = film.src;
+                currentIndex = index;
+                modal.style.display = 'block';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        function showVideo(index) {
+            if (index >= 0 && index < films.length) {
+                modalVideo.src = films[index].src;
+                currentIndex = index;
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (modal.style.display === 'block') {
+                if (e.key === 'ArrowRight') {
+                    showVideo(currentIndex + 1);
+                } else if (e.key === 'ArrowLeft') {
+                    showVideo(currentIndex - 1);
+                } else if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
