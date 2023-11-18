@@ -74,6 +74,11 @@ function disappearR() {
   document.getElementById("myDivR").style.display = "none";
 }
 
+function flashTitle() {
+  //document.getElementById("myDivR").style.opacity = "0";
+  document.getElementById("myDivTop").style.display = "none";
+}
+
 function image_appear() {
   document.getElementById("imgA").style.scale = "100%";
 }
