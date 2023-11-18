@@ -1,6 +1,7 @@
 let currentFilmIndex = 0;
 const vimeoIDs = ['34545', '4545', 'VIMEO_ID_3', 'VIMEO_ID_4', 'VIMEO_ID_5', 'VIMEO_ID_6', 'VIMEO_ID_7'];
 
+// Functions related to films
 function enlargeFilm(vimeoID) {
   currentFilmIndex = vimeoIDs.indexOf(vimeoID);
   document.getElementById('overlay').style.display = 'block';
@@ -41,3 +42,44 @@ function closeOnOverlayClick(event) {
 }
 
 document.getElementById('overlay').addEventListener('click', closeOnOverlayClick);
+
+// Other functions (add your functions from about.html here)
+function redColor() {
+  var col = document.getElementById("body");
+  col.style.backgroundColor = "black";
+}
+
+function blueColor() {
+  var col = document.getElementById("body");
+  col.style.backgroundColor = "white";
+}
+
+function appearL() {
+//  document.getElementById("myDivL").style.opacity = "1";
+  document.getElementById("myDivL").style.display = "block";
+}
+
+function disappearL() {
+ // document.getElementById("myDivL").style.opacity = "0";
+  document.getElementById("myDivL").style.display = "none";
+}
+
+function appearR() {
+ // document.getElementById("myDivR").style.opacity = "1";
+  document.getElementById("myDivR").style.display = "block";
+}
+
+function disappearR() {
+  //document.getElementById("myDivR").style.opacity = "0";
+  document.getElementById("myDivR").style.display = "none";
+}
+
+function image_appear() {
+  document.getElementById("imgA").style.scale = "100%";
+}
+
+function image_disappear() {
+  document.getElementById("imgA").style.scale = "0%";
+}
+
+// Add any additional functions from about.html here

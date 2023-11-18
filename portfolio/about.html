@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+          }
+
+        .red {
+            background-color: red;
+        }
+
+        p a {
+          color: red;
+          text-decoration: none;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .center_text {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        
+        .center_Img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: opacity 2s;
+        }
+
+        #myDivL {
+          color: red;
+          opacity: 0;
+        }
+
+        #myDivR {
+          color: red;
+          opacity: 0;
+        }
+
+        #imgA {
+          display: block;
+          margin-top: 20vh;
+            margin-left: auto;
+            margin-right: auto;
+          opacity: 0;
+          scale: 0%;
+          animation: lightning 0.6s ease infinite;
+
+        }
+
+        @keyframes lightning {
+          9% {
+            opacity: 0;
+          }
+          4% {
+            opacity: 1;
+          }
+          40% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          2% {
+            opacity: 0;
+          }
+          20% {
+            opacity: 0;
+          }
+        }
+       
+        .text_c {
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          width: 50%;
+          font-size: 5vh;
+        }
+
+        .text_c_smaller {
+          
+          position: absolute;
+          text-align: left;
+          width: 50%;
+          font-size: 2em;
+        }
+
+        .contact_text {
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+
+          font-family: Arial, sans-serif;
+          font-size: 2em;
+        }
+
+       
+
+        .full_page {
+          height: 100vh;
+        }
+
+        .blue {
+          height: 100vh;
+          background-color: blue;
+
+        }
+
+        .gallery {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1vw);
+          grid-gap: 1px;
+        }
+
+         
+       
+
+        </style>
+    </head>
+
+    <body id = "body">
+
+      <div class = "gallery" >
+      <img class = "center" onmouseenter = "redColor(), appearL();" onmouseleave = "blueColor(), disappearL();" 
+      src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
+       
+      <img class = "center" onmouseenter = "redColor(), appearR();" onmouseleave = "blueColor(), disappearR();" 
+      src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
+      </div>
+
+
+
+      <!-- try it -->
+    <div onmouseover = "image_disappear(), blueColor()">
+      <button onclick="image_appear(), redColor()" onmouseleave = "image_disappear(), redColor()">Try it</button>
+   </div>
+
+      <!-- cotnact info -->
+      <div onmouseover = "image_disappear(), blueColor()">
+       <!-- <button onclick="image_appear(), redColor()" onmouseleave = "image_disappear(), redColor()">Try it</button> -->
+       
+
+       
+      <div class = "contact_text"> 
+        <p>Contact me at <a href="monty.chaudoir@gmail">monty.chaudoir@gmail.com</a></p>      <!-- id='demo' style='display: none' -->
+        <p><a href="https://www.instagram.com/monty_corp/" >Instagram  </a></p>      <!-- id='demo' style='display: none' -->
+
+         <!-- <button type='button' onclick="toggleText()">Enter</button> -->
+    </div>
+
+    
+
+      
+    <a href="MY_WORK.html"><button type="button">go back</button></a>
+
+      <div id = "imgA">
+      <img class = "center_Img" src='imgs/lightning.jpg' img/>
+      </div>
+    
+      <div class = "center_text" >
+
+      <div id = "myDivL">
+          <p class = "text_c_smaller"> In the home page you can see my films, I made them on my own. I have many ideas which I need help with and I would like to work with other people. I can make fashion films and campaigns and high-end, classical, surreal art. If you would like to work with me then please lmk.</p>
+      </div>
+
+      <div id = "myDivR">
+        <p class = "text_c_smaller"> Goodbye</p>
+    </div>
+    
+  </div>
+
+
+      
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    <script>
+      function redColor() {
+        var col = document.getElementById("body");
+        col.style.backgroundColor = "black";
+    }
+
+    function blueColor() {
+        var col = document.getElementById("body");
+        col.style.backgroundColor = "white";
+    }
+
+    function appearL() {
+       document.getElementById("myDivL").style.opacity = "1";
+    }
+
+    function disappearL() {
+       document.getElementById("myDivL").style.opacity = "0";
+    }
+
+    function appearR() {
+       document.getElementById("myDivR").style.opacity = "1";
+    }
+
+    function disappearR() {
+       document.getElementById("myDivR").style.opacity = "0";
+    }
+
+    function image_appear() {
+       document.getElementById("imgA").style.scale = "100%";
+    }
+
+    function image_disappear() {
+       document.getElementById("imgA").style.scale = "0%";
+    }
+
+    function toggleText() {
+      var text = document.getElementById("demo");
+      if (text.style.display === "none") {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+}
+
+    
+    </script>
+
+    </body>
+</html>
