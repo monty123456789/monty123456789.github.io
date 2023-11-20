@@ -38,19 +38,7 @@ body {
     margin: 0 auto;
   }
 
-  @media screen and (max-width: 600px) {
-    .about_portfolio {
-      max-width: 100%;
-      gap: 20px;
-   }
- }
-
-  @media screen and (max-width: 600px) {
-     .porfolio {
-      max-width: 100%;
-      gap:5px;
-    }
-  }
+  
 
   .button {
     background-color: #e7e7e7; 
@@ -71,18 +59,7 @@ body {
     left: 20px;
   }
 
-  @media screen and (min-width: 1200px) {
-  .button {
-    top: 20px;
-    left: 20vw;
-    }
-    }
-
-    @media screen and (max-width: 600px) {
-        .button {
-          width: 20%;
-        }
-      }
+  
   
   .film {
     cursor: pointer;
@@ -171,11 +148,6 @@ body {
 
   }
 
-  @media screen and (max-width: 600px) {
-    .title {
-      font-size: 3em;
-    }
-  }
 
  
 
@@ -208,11 +180,7 @@ body {
     margin-bottom: 1em;
   }
 
-  @media screen and (max-width: 600px) {
-    .subtitle {
-      font-size: 1em;
-    }
-  }
+ 
   
   .contact_text {
     display: block;  
@@ -223,12 +191,7 @@ body {
     font-size: 1.5em;
   }
 
-  @media screen and (max-width: 600px) {
-    .contact_text {
-      font-size: 1em;
-      bottom: 20%;
-    }
-  }
+
 
   .appearing_text_center {
     text-align: left;
@@ -246,12 +209,7 @@ body {
     margin: 30px auto;
     font-size: 1em;
   }
-  
-  @media screen and (max-width: 600px) {
-    .appearing_text {
-      font-size: 1em;
-    }
-  }
+
 
   .footer {
     font-weight: bold;
@@ -279,5 +237,47 @@ body {
 }
 
 
+@media screen and (max-width: 600px) {
+  .about_portfolio {
+    max-width: 100%;
+    gap: 20px;
+ }
+
+ .porfolio {
+  max-width: 100%;
+  gap:5px;
+}
+
+.button {
+  width: 20%;
+}
+
+.title {
+  font-size: 3em;
+}
+
+.subtitle {
+  font-size: 1em;
+}
+
+.appearing_text {
+  font-size: 1em;
+}
+
+.contact_text {
+  font-size: 1em;
+  bottom: 20%;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+  .button {
+    top: 20px;
+    left: 20vw;
+    }
+    }
+
+}
   
   
