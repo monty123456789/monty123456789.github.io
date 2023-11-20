@@ -9,8 +9,18 @@ function enlargeFilm(vimeoID) {
 }
 
 function closeFilm() {
-  document.getElementById('overlay').style.display = 'none';
+  const overlay = document.getElementById('overlay');
+  const filmContainer = document.getElementById('filmContainer');
+  
+  // Stop video playback
+  const iframe = filmContainer.querySelector('iframe');
+  if (iframe) {
+    iframe.src = '';
+  }
+  
+  overlay.style.display = 'none';
 }
+
 
 function changeFilm(change) {
   currentFilmIndex += change;
