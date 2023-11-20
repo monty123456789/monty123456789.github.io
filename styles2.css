@@ -63,11 +63,13 @@ body {
   
   .film {
     cursor: pointer;
+    position: relative;
   }
   
   .film, img {
     width: 100%;
     height: auto;
+    display: block;
     display: block;
     transition: opacity 0.3s ease;
   }
@@ -81,6 +83,22 @@ body {
 
   .film img:hover {
     opacity: .5;
+  }
+  
+  .film-name {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .film-info {
+    position: relative;
   }
   
   .overlay {
@@ -98,10 +116,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: black;
     padding: 20px;
-    box-shadow: 0 0 20px white;
+    box-shadow: 0 0 20px black;
   }
+
+  
   
   .close {
     position: absolute;
@@ -243,7 +263,7 @@ body {
     gap: 20px;
  }
 
- .porfolio {
+ .portfolio {
   max-width: 100%;
   gap:5px;
 }
@@ -269,15 +289,19 @@ body {
   bottom: 20%;
 }
 
+.modal {
+  padding: 10px;
+}
 
+}
 
 @media screen and (min-width: 1200px) {
   .button {
     top: 20px;
     left: 20vw;
     }
-    }
-
 }
+
+
   
   

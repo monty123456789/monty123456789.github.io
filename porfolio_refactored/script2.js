@@ -1,5 +1,5 @@
 let currentFilmIndex = 0;
-const vimeoIDs = ['34545', '4545', 'VIMEO_ID_3', 'VIMEO_ID_4', 'VIMEO_ID_5', 'VIMEO_ID_6', 'VIMEO_ID_7'];
+const vimeoIDs = ['756760035', '375247022', '772816966', '801747294', '842453811'];
 
 // Functions related to films
 function enlargeFilm(vimeoID) {
@@ -28,6 +28,8 @@ function displayFilm() {
   iframe.src = `https://player.vimeo.com/video/${vimeoIDs[currentFilmIndex]}`;
   iframe.width = '800';
   iframe.height = '450';
+  iframe.style.maxWidth = '60vw'; // Set the maximum width to the viewport width
+  iframe.style.maxHeight = '40vW'; 
   iframe.frameBorder = '0';
   iframe.allow = 'autoplay; fullscreen';
   iframe.allowFullscreen = true;
@@ -40,6 +42,19 @@ function closeOnOverlayClick(event) {
     closeFilm();
   }
 }
+function showFilmName(film) {
+  var filmName = film.querySelector('.film-name');
+  filmName.style.display = 'block';
+}
+
+function hideFilmName(film) {
+  var filmName = film.querySelector('.film-name');
+  filmName.style.display = 'none';
+}
+
+
+
+
 
 document.getElementById('overlay').addEventListener('click', closeOnOverlayClick);
 
