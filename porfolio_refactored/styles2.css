@@ -38,7 +38,7 @@ body {
     margin: 0 auto;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 600px) {
     .about_portfolio {
       max-width: 100%;
       gap: 20px;
