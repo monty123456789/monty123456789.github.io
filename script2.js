@@ -1,41 +1,46 @@
 let currentFilmIndex = 0;
-const vimeoIDs = ['756760035', '375247022', '772816966', '801747294', '842453811'];
+const vimeoIDs = ['756760035', '375247022', '772816966', '801747294', '842453811', '722983782?h=6314ffdf5c'];
+
+const films = {
+  'Killer Kat': '756760035',
+  'Train Trip': '375247022',
+  'Reflect': '772816966',
+  'Circuit Breaker': '801747294',
+  'Rise and Fall': '512238234?h=cbaefe96b3',
+  'VFX Reel': '842453811'
+
+};
 
 // Functions related to films
-function enlargeFilm(vimeoID) {
-  currentFilmIndex = vimeoIDs.indexOf(vimeoID);
+function enlargeFilm(filmName) {
+  currentFilmIndex = filmName;
   document.getElementById('overlay').style.display = 'block';
   displayFilm();
 }
 
 function closeFilm() {
-  const overlay = document.getElementById('overlay');
-  const filmContainer = document.getElementById('filmContainer');
-  
-  // Stop video playback
-  const iframe = filmContainer.querySelector('iframe');
-  if (iframe) {
-    iframe.src = '';
-  }
-  
-  overlay.style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
 }
 
-
 function changeFilm(change) {
-  currentFilmIndex += change;
-  if (currentFilmIndex < 0) {
-    currentFilmIndex = vimeoIDs.length - 1;
-  } else if (currentFilmIndex >= vimeoIDs.length) {
-    currentFilmIndex = 0;
+  const filmNames = Object.keys(films);
+  const currentIndex = filmNames.indexOf(currentFilmIndex);
+  let newIndex = currentIndex + change;
+
+  if (newIndex < 0) {
+      newIndex = filmNames.length - 1;
+  } else if (newIndex >= filmNames.length) {
+      newIndex = 0;
   }
+
+  currentFilmIndex = filmNames[newIndex];
   displayFilm();
 }
 
 function displayFilm() {
   const filmContainer = document.getElementById('filmContainer');
   const iframe = document.createElement('iframe');
-  iframe.src = `https://player.vimeo.com/video/${vimeoIDs[currentFilmIndex]}`;
+  iframe.src = `https://player.vimeo.com/video/${films[currentFilmIndex]}`;
   iframe.width = '800';
   iframe.height = '450';
   iframe.style.maxWidth = '60vw'; // Set the maximum width to the viewport width

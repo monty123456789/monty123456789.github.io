@@ -55,8 +55,9 @@ body {
     margin: 2px 2px;
     cursor: pointer;
     position: fixed;
+    z-index: 999;
     top: 20px;
-    left: 20px;
+    right: 20px;
   }
 
   
@@ -233,7 +234,7 @@ body {
 
   .footer {
     font-weight: bold;
-    position: absolute;
+    position:fixed;
     background-color: #e1e1e1;
     text-align: center;
     font-family: Arial, sans-serif;
@@ -298,7 +299,7 @@ body {
 @media screen and (min-width: 1200px) {
   .button {
     top: 20px;
-    left: 20vw;
+    right: 20vw;
     }
 }
 
