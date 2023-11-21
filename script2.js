@@ -7,9 +7,25 @@ const films = {
   'Reflect': '772816966',
   'Circuit Breaker': '801747294',
   'Rise and Fall': '512238234?h=cbaefe96b3',
-  'VFX Reel': '842453811'
+  'VFX Reel': '842453811',
+  'Double A Batteries': '411589095', 
+  'for Sid': '411515498?h=c17c607024',
+  'Halo': '372839584',
+  'Jump': '375301006',
+  'Processing Ocean': '588527860',
+  'Processing Reel': '590299999',
+  'Melt': '723278292?h=bfc0a5653b',
+  'Tea Time': '733950269',
+  'Implode': '722983782?h=6314ffdf5c',
+
+  'Bathroom Break': '722984907?h=35a4910706',
+
+
+
+  'Bakar - Alive': '839735030?h=263b44ccdf'
 
 };
+
 
 // Functions related to films
 function enlargeFilm(filmName) {
