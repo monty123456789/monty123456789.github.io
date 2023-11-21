@@ -57,16 +57,32 @@ function displayFilm() {
   const filmContainer = document.getElementById('filmContainer');
   const iframe = document.createElement('iframe');
   iframe.src = `https://player.vimeo.com/video/${films[currentFilmIndex]}`;
-  iframe.width = '800';
-  iframe.height = '450';
-  iframe.style.maxWidth = '60vw'; // Set the maximum width to the viewport width
-  iframe.style.maxHeight = '40vW'; 
+  iframe.width = '2000';
+  iframe.height = '1500';
   iframe.frameBorder = '0';
   iframe.allow = 'autoplay; fullscreen';
   iframe.allowFullscreen = true;
+
+  function adjustMaxWidth() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 600) {
+      iframe.style.maxWidth = '90vw';
+      iframe.style.maxHeight = '60vW';
+    } else {
+      iframe.style.maxWidth = '70vw';
+      iframe.style.maxHeight = '40vW';
+    }
+  }
+
+  adjustMaxWidth(); // Initially set based on window width
+
+  // Event listener for window resize
+  window.addEventListener('resize', adjustMaxWidth);
+
   filmContainer.innerHTML = '';
   filmContainer.appendChild(iframe);
 }
+
 
 function closeOnOverlayClick(event) {
   if (event.target.id === 'overlay') {
