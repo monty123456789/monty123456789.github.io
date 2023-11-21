@@ -13,7 +13,9 @@ body {
   
   .main-content {
     flex: 1;
-    margin: 20px;
+    margin: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
 
@@ -24,9 +26,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     min-height: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 50px;
+    border-left: 100px;
+    border-right: 100px;
   }
 
   .about_portfolio {
@@ -266,11 +270,7 @@ body {
     display: none;
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px) {
-  .title {
-    font-size: 4em;
-  }
-}
+
   
 
 
@@ -329,20 +329,39 @@ body {
 
 }
 
+@media screen and (min-width: 601px) and (max-width: 1400px) {
+  .title {
+    font-size: 4.7em;
+  }
+
+  .main-content {
+    margin: 20px;
+  }
+
+  .portfolio {
+    gap: 10px;
+  }
+
+  .height {
+    height: 250px;
+  }
+}
+
 @media screen and (min-width: 1400px) {
   .button {
     top: 20px;
-    right: 15vw;
+    right: 5vw;
+    }
+
+    .height {
+      height: 250px;
     }
 }
 
 @media screen and (min-width: 2000px) {
   .button {
     top: 20px;
-    right: 25vw;
+    right: 15vw;
     }
 }
 
-
-  
-  
