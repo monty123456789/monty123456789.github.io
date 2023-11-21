@@ -57,8 +57,8 @@ function displayFilm() {
   const filmContainer = document.getElementById('filmContainer');
   const iframe = document.createElement('iframe');
   iframe.src = `https://player.vimeo.com/video/${films[currentFilmIndex]}`;
-  iframe.width = '2000';
-  iframe.height = '1500';
+  iframe.width = '1400';
+  iframe.height = '800';
   iframe.frameBorder = '0';
   iframe.allow = 'autoplay; fullscreen';
   iframe.allowFullscreen = true;
