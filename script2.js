@@ -108,6 +108,9 @@ function hideFilmName(film) {
 
 document.getElementById('overlay').addEventListener('click', closeOnOverlayClick);
 
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('click', handleClick, false);
+
 // Other functions (add your functions from about.html here)
 function redColor() {
   var col = document.getElementById("body");
@@ -149,6 +152,24 @@ function disappearR() {
   document.getElementById("contactID").style.display = "block";
   document.getElementById("contactID2").style.display = "block";
   document.getElementById("contactID3").style.display = "block";
+}
+
+function handleTouchStart(event) {
+  if (!event.target.closest('.film_p')) {
+    blueColor();
+    disappearR();
+    disappearL();
+
+  }
+}
+
+function handleClick(event) {
+  if (!event.target.closest('.film_p')) {
+    blueColor();
+    disappearR();
+    disappearL();
+
+  }
 }
 
 function flashTitle() {
