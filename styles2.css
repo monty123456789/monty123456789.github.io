@@ -236,10 +236,11 @@ body {
   .contact_text {
     display: block;  
    
- 
+    font-weight: bold;
+
     text-align: center;
     font-family: Arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
 
