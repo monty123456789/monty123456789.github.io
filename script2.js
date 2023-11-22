@@ -109,9 +109,26 @@ function hideFilmName(film) {
 document.getElementById('overlay').addEventListener('click', closeOnOverlayClick);
 
 document.addEventListener('DOMContentLoaded', function() {
-  // For mobile devices, use touchstart instead of click
-  const clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
-  document.addEventListener(clickEvent, handleDocumentClick);
+  const overlay = document.getElementById('overlay');
+
+  // Toggle functions on overlay click
+  overlay.addEventListener('click', function() {
+    blueColor();
+    disappearR();
+    disappearL();
+  });
+
+  // Check clicks outside targeted areas
+  document.addEventListener('click', function(event) {
+    const target = event.target;
+    const isInsideImage = target.closest('.film_p');
+    const isInsideText = target.closest('.appearing_text_center');
+
+    // If click is outside the targeted areas, show the overlay
+    if (!isInsideImage && !isInsideText) {
+      overlay.style.display = 'block';
+    }
+  });
 });
 
 // Other functions (add your functions from about.html here)
@@ -167,17 +184,6 @@ function disappearR() {
 }
 
 
-function handleDocumentClick(event) {
-  const target = event.target;
-  const bodyElement = document.getElementById('body');
-
-  // Check if the clicked element is not within the targeted areas
-  if (!target.closest('.film_p') && !target.closest('.appearing_text_center')) {
-    blueColor();
-    disappearR();
-    disappearL();
-  }
-}
 
   // On mobile devices, handle click outside the images
 
