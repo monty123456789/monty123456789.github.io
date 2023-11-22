@@ -1,4 +1,3 @@
-let currentFilmIndex = 0;
 const vimeoIDs = ['756760035', '375247022', '772816966', '801747294', '842453811', '722983782?h=6314ffdf5c'];
 
 const films = {
@@ -6,82 +5,86 @@ const films = {
   'Train Trip': '375247022',
   'Reflect': '772816966',
   'Circuit Breaker': '801747294',
-  'Rise and Fall': '512238234?h=cbaefe96b3',
+  'Rise and Fall': '512238234',
   'VFX Reel': '842453811',
   'Double A Batteries': '411589095', 
-  'for Sid': '411515498?h=c17c607024',
+  'for Sid': '411515498',
   'Halo': '372839584',
   'Jump': '375301006',
   'Processing Ocean': '588527860',
   'Processing Reel': '590299999',
-  'Melt': '723278292?h=bfc0a5653b',
   'Tea Time': '733950269',
-  'Implode': '722983782?h=6314ffdf5c',
-
-  'Bathroom Break': '722984907?h=35a4910706',
-
-
-
-  'Bakar - Alive': '839735030?h=263b44ccdf'
+  'Implode': '722983782',
+  'Bathroom Break': '722984907',
+  'Bakar - Alive': '839735030'
 
 };
 
 
 // Functions related to films
+let vimeoPlayer; // Declare a variable to hold the Vimeo player instance
+let currentFilmIndex = 0;
+
 function enlargeFilm(filmName) {
-  currentFilmIndex = filmName;
+  currentFilmIndex = Object.keys(films).findIndex(key => key === filmName);
   document.getElementById('overlay').style.display = 'block';
-  displayFilm();
-}
-
-function closeFilm() {
-  document.getElementById('overlay').style.display = 'none';
-}
-
-function changeFilm(change) {
-  const filmNames = Object.keys(films);
-  const currentIndex = filmNames.indexOf(currentFilmIndex);
-  let newIndex = currentIndex + change;
-
-  if (newIndex < 0) {
-      newIndex = filmNames.length - 1;
-  } else if (newIndex >= filmNames.length) {
-      newIndex = 0;
-  }
-
-  currentFilmIndex = filmNames[newIndex];
   displayFilm();
 }
 
 function displayFilm() {
   const filmContainer = document.getElementById('filmContainer');
-  const iframe = document.createElement('iframe');
-  iframe.src = `https://player.vimeo.com/video/${films[currentFilmIndex]}`;
-  iframe.width = '1400';
-  iframe.height = '800';
-  iframe.frameBorder = '0';
-  iframe.allow = 'autoplay; fullscreen';
-  iframe.allowFullscreen = true;
+  const videoId = parseInt(films[Object.keys(films)[currentFilmIndex]]);
+
+  console.log('Attempting to load video with ID:', videoId);
+
+  if (!vimeoPlayer) {
+    vimeoPlayer = new Vimeo.Player(filmContainer, {
+      id: videoId,
+      width: 800,
+      height: 450,
+      autoplay: true
+    });
+
+    vimeoPlayer.ready().then(() => {
+      adjustMaxWidth();
+    });
+  } else {
+    vimeoPlayer.loadVideo(videoId).then(() => {
+      adjustMaxWidth();
+    });
+  }
 
   function adjustMaxWidth() {
     const screenWidth = window.innerWidth;
     if (screenWidth < 600) {
-      iframe.style.maxWidth = '90vw';
-      iframe.style.maxHeight = '60vW';
+      vimeoPlayer.element.style.maxWidth = '90vw';
+      vimeoPlayer.element.style.maxHeight = '60vW';
     } else {
-      iframe.style.maxWidth = '70vw';
-      iframe.style.maxHeight = '40vW';
+      vimeoPlayer.element.style.maxWidth = '70vw';
+      vimeoPlayer.element.style.maxHeight = '40vW';
     }
   }
-
-  adjustMaxWidth(); // Initially set based on window width
-
-  // Event listener for window resize
-  window.addEventListener('resize', adjustMaxWidth);
-
-  filmContainer.innerHTML = '';
-  filmContainer.appendChild(iframe);
 }
+
+
+function closeFilm() {
+  if (vimeoPlayer) {
+    vimeoPlayer.pause();
+  }
+  document.getElementById('overlay').style.display = 'none';
+}
+
+function changeFilm(change) {
+  currentFilmIndex += change;
+  if (currentFilmIndex < 0) {
+    currentFilmIndex = Object.keys(films).length - 1;
+  } else if (currentFilmIndex >= Object.keys(films).length) {
+    currentFilmIndex = 0;
+  }
+  displayFilm();
+}
+
+
 
 
 function closeOnOverlayClick(event) {
