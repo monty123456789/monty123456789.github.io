@@ -168,7 +168,7 @@ function handleDocumentClick(event) {
   const target = event.target;
 
   // Check if the click occurred outside the targeted areas
-  if (!target.closest('.film_p') && !target.closest('.appearing_text')) {
+  if (!target.closest('.film_p') && !target.closest('.appearing_text_center')) {
     blueColor();
     disappearR();
     disappearL();
