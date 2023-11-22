@@ -8,22 +8,21 @@
         <link rel="icon" type="image/x-icon" href="portfolio_favicon/favicon-32x32.png">
     </head>
 
-    <body onmouseenter="blueColor()" id = "body">
+    <body onmouseenter="blueColor(), disappearL(), disappearR()" id = "body" >
     
         <div class="wrapper"> 
             <br>
             <h2  class="subtitle">Contact</h2>
             <h1 class="title">Monty Chaudoir</h1>
-            <a href="index.html"><button type="button" class="button">Home</button></a>
 
             
             
             <div class="main-content">
                 <div class="about_portfolio">
                     <div class = "film_p">
-                        <img  onmouseenter = "redColor(), appearL();" onmouseleave = "blueColor(), disappearL();" 
-                            src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
+                        <img  onmouseenter = "redColor(), appearL();" onmouseleave = "blueColor(), disappearL();" src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
                     </div>
+
                     <div class = "film_p">
                         <img onmouseenter = "redColor(), appearR();" onmouseleave = "blueColor(), disappearR();" 
                             src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_neg.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
@@ -34,9 +33,9 @@
 
             <!-- cotnact info -->  
             <div class="contact_text"> 
-                <p><a href="mailto:monty.chaudoir@gmail.com">Send Email</a> </p>
-                <p><a href="https://www.instagram.com/monty_corp/" target = "_blank" >Instagram  </a> </p> 
-                <p><a href="https://vimeo.com/user63990255" target = "_blank" >Vimeo  </a></p> 
+                <p><a id = "contactID" href="mailto:monty.chaudoir@gmail.com">Email</a> </p>
+                <p><a id = "contactID2" href="https://www.instagram.com/monty_corp/" target = "_blank" >Instagram  </a> </p> 
+                <p><a id = "contactID3" href="https://vimeo.com/user63990255" target = "_blank" >Vimeo  </a></p> 
 
                 <!-- id='demo' style='display: none' -->
                 <!-- <button type='button' onclick="toggleText()">Enter</button> -->

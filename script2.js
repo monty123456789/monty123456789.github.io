@@ -122,21 +122,33 @@ function blueColor() {
 function appearL() {
 //  document.getElementById("myDivL").style.opacity = "1";
   document.getElementById("myDivL").style.display = "block";
+  document.getElementById("contactID").style.display = "none";
+  document.getElementById("contactID2").style.display = "none";
+  document.getElementById("contactID3").style.display = "none";
 }
 
 function disappearL() {
  // document.getElementById("myDivL").style.opacity = "0";
   document.getElementById("myDivL").style.display = "none";
+  document.getElementById("contactID").style.display = "block";
+  document.getElementById("contactID2").style.display = "block";
+  document.getElementById("contactID3").style.display = "block";
 }
 
 function appearR() {
  // document.getElementById("myDivR").style.opacity = "1";
   document.getElementById("myDivR").style.display = "block";
+  document.getElementById("contactID").style.display = "none";
+  document.getElementById("contactID2").style.display = "none";
+  document.getElementById("contactID3").style.display = "none";
 }
 
 function disappearR() {
   //document.getElementById("myDivR").style.opacity = "0";
   document.getElementById("myDivR").style.display = "none";
+  document.getElementById("contactID").style.display = "block";
+  document.getElementById("contactID2").style.display = "block";
+  document.getElementById("contactID3").style.display = "block";
 }
 
 function flashTitle() {

@@ -70,6 +70,10 @@ body {
     cursor: pointer;
     position: relative;
   }
+
+  .film_p {
+    position: relative;
+  }
   
   .film, img {
     width: 100%;
@@ -103,6 +107,20 @@ body {
     font-size: 14px;
   }
   
+  .film-name-p {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+
   .film-info {
     position: relative;
   }
@@ -258,7 +276,7 @@ body {
   
   .footer a,  p a  {
     text-decoration: none;
-    color: red;
+    color: black;
   }
 
 
