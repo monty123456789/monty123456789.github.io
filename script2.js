@@ -164,11 +164,20 @@ function disappearR() {
 
 }
 
+
 function handleDocumentClick(event) {
   const target = event.target;
+  const bodyElement = document.getElementById('body');
 
-  // Check if the click occurred outside the targeted areas
+  // Check if the clicked element is not within the targeted areas
   if (!target.closest('.film_p') && !target.closest('.appearing_text_center')) {
+    blueColor();
+    disappearR();
+    disappearL();
+  }
+
+  // On mobile devices, handle click outside the images
+  if (window.innerWidth < 768 && !target.closest('.film_p')) {
     blueColor();
     disappearR();
     disappearL();
