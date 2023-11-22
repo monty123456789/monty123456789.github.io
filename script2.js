@@ -109,7 +109,9 @@ function hideFilmName(film) {
 document.getElementById('overlay').addEventListener('click', closeOnOverlayClick);
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.addEventListener('click', handleDocumentClick);
+  // For mobile devices, use touchstart instead of click
+  const clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+  document.addEventListener(clickEvent, handleDocumentClick);
 });
 
 // Other functions (add your functions from about.html here)
@@ -175,6 +177,7 @@ function handleDocumentClick(event) {
     disappearR();
     disappearL();
   }
+}
 
   // On mobile devices, handle click outside the images
   if (window.innerWidth < 768 && !target.closest('.film_p')) {
