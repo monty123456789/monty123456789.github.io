@@ -125,16 +125,8 @@ body {
   .film-info {
     position: relative;
   }
-  
-  .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+
+
   
   .modal {
     position: absolute;
@@ -155,20 +147,18 @@ body {
   .close {
     position: absolute;
     color: white;
+    text-shadow: 0px 0px 3px;
     top: -60px;
     right: -60px;
     font-size: 5em;
     cursor: pointer;
+    text-shadow: 0px 0px 5px white;
   }
   
   .modal-content {
     text-align: center;
   }
-  
-  .film-container {
-    max-width: 2200px;
-    margin: 0 auto;
-  }
+ 
   
   .arrow-btn {
     position: absolute;
@@ -182,12 +172,12 @@ body {
   }
   
   .prev {
-    left: -50px;
+    left: -100px;
 
   }
   
   .next {
-    right: -50px;
+    right: -100px;
   }
   
   .title {
@@ -281,6 +271,15 @@ body {
     color: black;
   }
 
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
 /* Add this to your existing CSS file or style section */
 #overlay {
@@ -289,8 +288,16 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent; /* Set the overlay as transparent */
+  background-color: rgba(0, 0, 0, 0.8); /* Set the overlay as transparent */
   display: none; /* Initially hidden */
+}
+
+
+
+ 
+.film-container {
+  max-width: 2200px;
+  margin: 0 auto;
 }
 
 #myDivL, #myDivR {
@@ -371,6 +378,16 @@ body {
   z-index: 1;
 }
 
+.close {
+  position: absolute;
+  color: white;
+  text-shadow: 0px 0px 3px;
+  top: -100px;
+  right: 20px;
+  font-size: 5em;
+  cursor: pointer;
+  text-shadow: 0px 0px 5px white;
+}
 
 }
 
@@ -387,6 +404,8 @@ body {
     z-index: 1;
   
   }
+
+  
 
   .main-content {
     margin: 20px;

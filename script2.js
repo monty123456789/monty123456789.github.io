@@ -40,8 +40,8 @@ function displayFilm() {
   if (!vimeoPlayer) {
     vimeoPlayer = new Vimeo.Player(filmContainer, {
       id: videoId,
-      width: 800,
-      height: 450,
+      width: 980,
+      height: 550,
       autoplay: true
     });
 
@@ -86,12 +86,6 @@ function changeFilm(change) {
 
 
 
-
-function closeOnOverlayClick(event) {
-  if (event.target.id === 'overlay') {
-    closeFilm();
-  }
-}
 function showFilmName(film) {
   var filmName = film.querySelector('.film-name');
   filmName.style.display = 'block';
