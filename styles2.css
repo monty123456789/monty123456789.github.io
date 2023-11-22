@@ -73,6 +73,7 @@ body {
 
   .film_p {
     position: relative;
+    z-index: 3;
   }
   
   .film, img {
