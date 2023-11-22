@@ -128,7 +128,7 @@ body {
   }
 
   .height {
-    height: 200px;
+    height: 3vh;
   }
 
   
@@ -321,9 +321,7 @@ body {
   padding: 10px;
 }
 
-.height {
-  height: 130px;
-}
+
 
 .prev {
   left: 30px;
@@ -368,9 +366,7 @@ body {
     gap: 10px;
   }
 
-  .height {
-    height: 250px;
-  }
+  
 
   .prev {
     left: -60px;
@@ -387,9 +383,6 @@ body {
     right: 5vw;
     }
 
-    .height {
-      height: 250px;
-    }
 
     .prev {
       left: -90px;
