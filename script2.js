@@ -108,8 +108,10 @@ function hideFilmName(film) {
 
 document.getElementById('overlay').addEventListener('click', closeOnOverlayClick);
 
-document.addEventListener('touchstart', handleTouchStart, false);
-document.addEventListener('click', handleClick, false);
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('touchstart', handleTouchStart, false);
+  document.addEventListener('click', handleClick, false);
+});
 
 // Other functions (add your functions from about.html here)
 function redColor() {
@@ -128,6 +130,9 @@ function appearL() {
   document.getElementById("contactID").style.display = "none";
   document.getElementById("contactID2").style.display = "none";
   document.getElementById("contactID3").style.display = "none";
+  document.getElementById("title").style.color = "white";
+
+
 }
 
 function disappearL() {
@@ -136,6 +141,8 @@ function disappearL() {
   document.getElementById("contactID").style.display = "block";
   document.getElementById("contactID2").style.display = "block";
   document.getElementById("contactID3").style.display = "block";
+  document.getElementById("title").style.color = "black";
+
 }
 
 function appearR() {
@@ -144,6 +151,8 @@ function appearR() {
   document.getElementById("contactID").style.display = "none";
   document.getElementById("contactID2").style.display = "none";
   document.getElementById("contactID3").style.display = "none";
+  document.getElementById("title").style.color = "white";
+
 }
 
 function disappearR() {
@@ -152,6 +161,8 @@ function disappearR() {
   document.getElementById("contactID").style.display = "block";
   document.getElementById("contactID2").style.display = "block";
   document.getElementById("contactID3").style.display = "block";
+  document.getElementById("title").style.color = "black";
+
 }
 
 function handleTouchStart(event) {
