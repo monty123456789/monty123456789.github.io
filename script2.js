@@ -180,12 +180,7 @@ function handleDocumentClick(event) {
 }
 
   // On mobile devices, handle click outside the images
-  if (window.innerWidth < 768 && !target.closest('.film_p')) {
-    blueColor();
-    disappearR();
-    disappearL();
-  }
-}
+
 
 function flashTitle() {
   //document.getElementById("myDivR").style.opacity = "0";
