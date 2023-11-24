@@ -119,7 +119,7 @@ function appearL() {
   document.getElementById("contactID").style.display = "none";
   document.getElementById("contactID2").style.display = "none";
   document.getElementById("contactID3").style.display = "none";
-  document.getElementById("title").style.color = "white";
+  //document.getElementById("title").style.color = "white";
 
 
 }
@@ -130,7 +130,7 @@ function disappearL() {
   document.getElementById("contactID").style.display = "block";
   document.getElementById("contactID2").style.display = "block";
   document.getElementById("contactID3").style.display = "block";
-  document.getElementById("title").style.color = "black";
+ // document.getElementById("title").style.color = "black";
 
 }
 
@@ -140,7 +140,7 @@ function appearR() {
   document.getElementById("contactID").style.display = "none";
   document.getElementById("contactID2").style.display = "none";
   document.getElementById("contactID3").style.display = "none";
-  document.getElementById("title").style.color = "white";
+  //document.getElementById("title").style.color = "white";
 
 }
 
@@ -150,7 +150,7 @@ function disappearR() {
   document.getElementById("contactID").style.display = "block";
   document.getElementById("contactID2").style.display = "block";
   document.getElementById("contactID3").style.display = "block";
-  document.getElementById("title").style.color = "black";
+ // document.getElementById("title").style.color = "black";
 
 }
 

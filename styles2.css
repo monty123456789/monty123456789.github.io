@@ -107,6 +107,20 @@ body {
     padding: 5px 10px;
     font-size: 14px;
   }
+
+  .film-name-about {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+
+    color: black;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
   
   .film-name-p {
     display: block;
@@ -147,12 +161,10 @@ body {
   .close {
     position: absolute;
     color: white;
-    text-shadow: 0px 0px 3px;
     top: -60px;
     right: -60px;
     font-size: 5em;
     cursor: pointer;
-    text-shadow: 0px 0px 5px white;
   }
   
   .modal-content {
@@ -165,7 +177,6 @@ body {
     top: 45%;
     font-size: 90px;
     color: white;
-    text-shadow: 0px 0px 10px white;
     cursor: pointer;
     z-index: 1;
 
@@ -245,7 +256,16 @@ body {
 
   .appearing_text {
     display: block;
-    color: white;
+    color: black;
+    min-height: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+    font-size: 1em;
+  }
+
+  .appearing_text_t {
+    display: block;
+    color: black;
     min-height: 100%;
     max-width: 700px;
     margin: 30px auto;
@@ -305,7 +325,9 @@ body {
     display: none;
 }
 
-
+.nav_buttons {
+  width: 60px;
+}
   
 
 
@@ -373,7 +395,6 @@ body {
 
   font-size: 60px;
   color: white;
-  text-shadow: 0px 0px 10px white;
   cursor: pointer;
   z-index: 1;
 }
@@ -381,12 +402,10 @@ body {
 .close {
   position: absolute;
   color: white;
-  text-shadow: 0px 0px 3px;
   top: -100px;
   right: 20px;
   font-size: 5em;
   cursor: pointer;
-  text-shadow: 0px 0px 5px white;
 }
 
 }
@@ -399,7 +418,6 @@ body {
   .arrow-btn {
     font-size: 60px;
     color: white;
-    text-shadow: 0px 0px 10px white;
     cursor: pointer;
     z-index: 1;
   
