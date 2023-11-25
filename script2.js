@@ -24,7 +24,6 @@ const films = {
 // Functions related to films
 let vimeoPlayer; // Declare a variable to hold the Vimeo player instance
 let currentFilmIndex = 0;
-
 function enlargeFilm(filmName) {
   currentFilmIndex = Object.keys(films).findIndex(key => key === filmName);
   document.getElementById('overlay').style.display = 'block';
@@ -125,6 +124,7 @@ function appearL() {
 }
 
 function disappearL() {
+
  // document.getElementById("myDivL").style.opacity = "0";
   document.getElementById("myDivL").style.display = "none";
   document.getElementById("contactID").style.display = "block";
@@ -173,3 +173,33 @@ function image_disappear() {
 }
 
 // Add any additional functions from about.html here
+
+// Array of paths to your frames
+const framePaths = [
+  'portfolio_favicon/favicon-32x32.png',
+  'portfolio_favicon/favicon-32x32_r.png'
+  // Add paths to all your frames
+];
+
+// Function to change the favicon
+function changeFavicon() {
+  let currentFrame = 0;
+  const totalFrames = framePaths.length;
+  console.log(framePaths.length)
+  setInterval(() => {
+    const link = document.querySelector("link[rel='icon']");
+
+    // Update the favicon
+    link.href = framePaths[currentFrame];
+
+    currentFrame = (currentFrame + 1) % totalFrames;
+  }, 2000); // Adjust the time interval (in milliseconds) between frames
+}
+
+// Call the function to start the animation
+changeFavicon();
+console.log(framePaths.length)
+
+
+; // Replace this with the path to your favicon
+
