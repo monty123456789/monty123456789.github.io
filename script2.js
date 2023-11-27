@@ -154,6 +154,16 @@ function disappearR() {
 
 }
 
+function swapImages() {
+  var image1 = document.getElementById('eyeImage1');
+  var image2 = document.getElementById('eyeImage2');
+
+  var temp = image1.src;
+  image1.src = image2.src;
+  image2.src = temp;
+}
+
+
 
 
   // On mobile devices, handle click outside the images

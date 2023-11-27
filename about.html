@@ -13,8 +13,13 @@
     
         <div  class="wrapper" > 
             <br>
-            <h2  class="subtitle">Contact</h2>
-            <h1  id="titles" class="title">Monty Chaudoir</h1>
+            <a href="mailto:monty.chaudoir@gmail.com">
+                <h2  class="subtitle">Contact</h2>
+            </a>
+
+            <a href="index.html">
+                <h1 id="titles" class="title" onmouseover="swapImages()" onmouseout="swapImages()">Monty Chaudoir</h1>
+            </a>
             <br>
 
             
@@ -22,12 +27,12 @@
             <div class="main-content">
                 <div class="about_portfolio">
                     <div class = "film_p">
-                        <img  onmouseenter = "appearL();" onmouseleave = " disappearL();" 
+                        <img id="eyeImage1"  onmouseenter = "appearL();" onmouseleave = " disappearL();" 
                         src='imgs/eye_1.jpg' onmouseover="this.src='imgs/eye_1_r.jpg';" onmouseout="this.src='imgs/eye_1.jpg';" img/>
                     </div>
 
                     <div class = "film_p">
-                        <img onmouseenter = "appearR();" onmouseleave = "disappearR();" 
+                        <img id="eyeImage2" onmouseenter = "appearR();" onmouseleave = "disappearR();" 
                             src='imgs/eye_1_r.jpg' onmouseover="this.src='imgs/eye_1.jpg';" onmouseout="this.src='imgs/eye_1_r.jpg';" img/>
                     </div> 
                 </div> 

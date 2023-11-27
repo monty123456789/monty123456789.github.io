@@ -18,6 +18,10 @@ body {
     margin-bottom: 20px;
   }
 
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   
   /* Styles for films */
