@@ -263,16 +263,18 @@ body {
     color: black;
     min-height: 100%;
     max-width: 700px;
-    margin: 30px auto;
+    margin: 10px auto;
+
     font-size: 1em;
   }
 
-  .appearing_text_t {
+  .appearing_text_2 {
     display: block;
     color: black;
     min-height: 100%;
     max-width: 700px;
-    margin: 30px auto;
+    margin: 10px auto;
+    margin-bottom: 9vw;
     font-size: 1em;
   }
 
